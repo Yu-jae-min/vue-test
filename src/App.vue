@@ -1,56 +1,37 @@
-<script setup>
-import HelloWorld from "./components/HelloWorld.vue";
-import TheWelcome from "./components/TheWelcome.vue";
-import Count from "./components/Count.vue";
-</script>
-
 <template>
-  <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="./assets/logo.svg"
-      width="125"
-      height="125"
-    />
-
-    <Count />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
+  <header class="nav">
+    <router-link to="/" class="nav-link">Home</router-link>
+    <router-link to="/count" class="nav-link">Count</router-link>
   </header>
 
-  <main>
-    <TheWelcome />
+  <main class="content">
+    <router-view />
   </main>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<style>
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  z-index: 1000;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.nav-link {
+  color: #fff;
+  text-decoration: none;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.nav-link:hover {
+  text-decoration: underline;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.content {
+  padding-top: 40px;
 }
 </style>
