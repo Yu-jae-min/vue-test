@@ -1,6 +1,7 @@
 <script setup>
 import HelloWorld from "./components/HelloWorld.vue";
 import TheWelcome from "./components/TheWelcome.vue";
+import Count from "./components/Count.vue";
 </script>
 
 <template>
@@ -12,6 +13,8 @@ import TheWelcome from "./components/TheWelcome.vue";
       width="125"
       height="125"
     />
+
+    <Count />
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
